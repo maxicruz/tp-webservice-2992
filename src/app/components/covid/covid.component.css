@@ -1,0 +1,76 @@
+h2{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Yanone Kaffeesatz' 20px bold;
+}
+
+.titulocard1{
+  color: #efb810;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(18, 19, 18)), to(#392c04));
+}
+
+.titulocard{
+  color: #efb810;
+  font: 30px Calibri bold;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(18, 19, 18)), to(#392c04));
+}
+
+.conversor{
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(4, 15, 172)), to(#392c04));
+  color: rgb(252, 252, 252);
+}
+
+.exchange{
+  font-size: 14px;
+  width: 100%    
+}
+
+table thead tr{
+  background: #9b9a9c;
+  font-size: 15px;
+}
+
+.thead1{
+  border-radius: 5px;
+  border: solid black 2px;
+}
+
+.bordes{
+  border-bottom: solid 1px;
+  background-color: #dfdfdf;
+}
+
+.zootarjeta{
+  border: solid #efb810 2px;
+  border-radius: 5px;
+  width: 7em
+}
+
+form{
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 1%;
+  padding-block-end: 2%;
+  border: solid black 2px;
+}
+
+label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  padding: 6px;
+  font-size: 18px;
+}
+
+.select{
+  font-family: 15px;
+}
+
+button{
+  font-family: consolas;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #2196f3;
+}

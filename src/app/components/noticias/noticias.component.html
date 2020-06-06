@@ -1,0 +1,41 @@
+<form class="form-horizontal">
+    <div class="form-group row">
+        <label class="col-sm-2 control-label">Deportes</label>
+        <div class="col-sm-10">
+          <select name="categoria" class="form-control col-lg-10" required [(ngModel)]= "categoria">
+            <option value="soccer">Fútbol</option>
+            <option value="cricket">Cricket</option>
+            <option value="basketball">Baloncesto</option>
+            <option value="tennis">Tenis</option>
+          </select>
+        </div>  
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-dark col-lg-4" (click)="cargarNoticia()"> 
+            <a>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Cargar Noticias
+            </a>
+        </button>
+    </div>
+    <h1 class="text-center">Últimas noticias</h1>
+    <div class="row">       
+        <section class="col-md-12">            
+            <div class="card-deck">
+                <div class="col-md-6" *ngFor= "let item of vector_noticia">
+                    <div class="card-group">
+                        <img src="{{item.img}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <span class="badge badge-danger">{{item.cap}}</span>
+                            <h4 class="card-title">{{item.tit | uppercase}}</h4>
+                            <p class="card-text">{{item.con}}</p>                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</form>

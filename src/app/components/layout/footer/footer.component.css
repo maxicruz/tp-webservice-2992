@@ -1,0 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    background: #1C2331;
+    /*#2c3e50;*/
+    width: 100%;
+    overflow: auto;
+    padding: 1px;
+}

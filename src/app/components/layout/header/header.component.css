@@ -1,0 +1,35 @@
+a{
+  color: #524c56;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Yanone Kaffeesatz' 20px bold;
+}
+
+  .tituloLogo{  
+    font: 'Yanone Kaffeesatz' 20px bold;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .active{
+    font: bold;
+  }
+
+  .imagenzoo{
+    border: solid #080808 2px;
+    border-radius: 1px;
+    width: 6em;
+    display: none;
+    font-size: 10px;
+  } 
+
+  .nav-item{
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  
+  .nav-item:hover{
+    background: #4B515D;
+    border-radius: 10px;
+  }

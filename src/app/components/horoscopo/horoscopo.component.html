@@ -1,0 +1,22 @@
+<h1 class="text-center">Horóscopo de hoy</h1>
+<div class="form-group text-center">
+    <button type="submit" class="btn btn-dark col-lg-4" (click)="cargarHoroscopo()"> 
+        Mostrar Horóscopo
+    </button>
+</div>
+<div *ngFor='let horoscopo of vector_horoscopo'>
+    <div class="col-md-12 col-lg-12 my-3">
+        <div class="card shadow-lg">
+            <div class="card-header titulocard">{{horoscopo.name | uppercase}}</div>
+            <div class="card-body">
+                <div class="media">
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-2">{{horoscopo.start_date}} al {{horoscopo.end_date}}</h5>
+                        Si se anima y comienza a apartar de su lado a las personas que le aportan problemas 
+                        a su vida, pronto se sentirá liberado. Anímese y todo mejorará en poco tiempo. 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

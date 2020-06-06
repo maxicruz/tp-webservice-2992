@@ -1,0 +1,98 @@
+<div class="card shadow-lg my-3">
+  <div class="card-header text-center conversor">
+    <h2>Estadísticas de COVID19</h2>
+  </div>
+    <form class="form-horizontal">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <div class="col-md-12">
+            <div class="form-group row">
+              <label for="form-check-label" class="col-md-2">País</label>
+                <select class="form-control col-lg-10" required (change)="getPaises($event.target.value)">
+                  <option value="" selected hidden>Seleccione un país...</option>
+                  <option *ngFor="let pais of paises" value={{pais.Slug}}>
+                    {{pais.ISO2}} - 
+                    {{pais.Country}}
+                  </option>
+                </select>
+                </div>
+                <div class="form-group row">
+                  <label class="form-check-label">Casos confirmados: {{confirmed | number:'2.0-0'}}</label>                                                        
+                </div>
+                <div class="form-group row">                            
+                  <label class="form-check-label">Curados:
+                    <a style="color: rgb(34, 172, 64);">{{recovered | number:'2.0-0'}}</a>  
+                  </label>                                                       
+                </div>
+                <div class="form-group row">                           
+                  <label class="form-check-label">Fallecidos: 
+                    <a style="color: rgb(255, 0, 0);">{{deaths | number:'2.0-0'}}</a>
+                  </label>                            
+                </div>
+              </div>
+          <button type="submit" class="btn btn-dark col-lg-12" (click)="getCoronaData()"> 
+            Consultar
+          </button>                       
+        </div>
+      </div>
+    </form>
+</div>
+<div class="table-responsive table-hover shadow-lg thead1">
+  <h2>Estadísticas</h2>
+  <table class="table">
+    <thead class="thead">
+      <tr> 
+        <th>Ubicación</th> 
+        <th>Casos Confirmados</th>
+        <th>Casos por 1 mill. personas</th>
+        <th>Curados</th>
+        <th>Fallecidos</th> 
+      </tr> 
+    </thead>
+    <tbody>
+      <tr class="table-success"> 
+        <td>Todo el mundo</td>
+        <td>1.418.416</td> 
+        <td>Curados</td>
+        <td>sxdcf</td>
+        <td>España</td>
+      </tr>
+      <tr> 
+        <td>Argentina</td>
+        <td>129398</td> 
+        <td>Elemento 2,3</td>
+        <td>3.144</td>
+        <td>3.144</td>
+      </tr>
+      <tr class="table-danger"> 
+        <td>Estados Unidos</td>
+        <td>45.819</td> 
+        <td>Elemento 3,3</td>
+        <td>Curados</td>
+        <td>Elemento 1,1</td>
+      </tr>
+      <tr> 
+        <td>Italia</td>
+        <td>25.085</td> 
+        <td>Elemento 3,3</td>
+        <td>Curados</td>
+        <td>Elemento 1,1</td>
+      </tr>
+      <tr> 
+        <td>España</td>
+        <td>21.717</td> 
+        <td>Elemento 3,3</td>
+        <td>Curados</td>
+        <td>Elemento 1,1</td>
+      </tr>
+      <tr> 
+        <td>Alemania</td>
+        <td>5.165</td> 
+        <td>Elemento 3,3</td>
+        <td>Curados</td>
+        <td>Elemento 1,1</td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+<br>

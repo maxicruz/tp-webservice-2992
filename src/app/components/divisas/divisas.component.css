@@ -1,0 +1,39 @@
+h2{
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Yanone Kaffeesatz' 20px bold;
+}
+
+.conversor{
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(4, 15, 172)), to(#392c04));
+  color: rgb(252, 252, 252);
+  font-size: 26px;
+}
+
+.exchange{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  width: 100%    
+}
+
+.bordes{
+  border-bottom: solid 1px;
+  background-color: #ececec;
+  
+}
+
+label{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 9px;
+}
+
+button{
+  font-family: consolas;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #2196f3;
+}

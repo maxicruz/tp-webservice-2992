@@ -1,0 +1,26 @@
+<nav id="menu1" class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <span class="navbar-text tituloLogo">
+    <img src="../../../../assets/img/logo1.jpg" width="30" height="30" class="d-inline-block imagenzoo align-top"> Portal de Noticias
+  </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0 text-center">
+          <li routerLinkActive="active" class="nav-item">
+              <a [routerLink]="['noticias']" class="nav-link">
+                Noticias<span class="sr-only">(current)</span>
+              </a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+              <a [routerLink]="['divisas']" class="nav-link">Divisas</a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+              <a [routerLink]="['horoscopo']" class="nav-link">Horóscopo</a>
+          </li>
+          <li routerLinkActive="active" class="nav-item">
+              <a [routerLink]="['covid']" class="nav-link">Estadísticas covid</a>
+          </li>           
+      </ul>                
+    </div>
+</nav>

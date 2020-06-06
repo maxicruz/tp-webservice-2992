@@ -1,0 +1,140 @@
+<div class="row">
+    <section class="col-md-8 col-lg-8 col-xl-8 my-3">
+        <div class="card shadow-lg rounded">
+            <div class="card-header text-center conversor">
+                <h2>Cotización de Divisas</h2>
+            </div>     
+        <div class="card-body">
+            <table class="exchange" cellpadding="3">
+                <thead>                    
+                    <tr class="text-white conversor">
+                        <th scope="col"></th>
+                        <th scope="col">ARS</th>
+                        <th scope="col">USD</th>
+                        <th scope="col">EUR</th>
+                        <th scope="col">CNY</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bordes">
+                        <td scope="row">1 ARS</td>                        
+                        <td>1.00</td>
+                        <td class="text-info">0.01</td>
+                        <td class="text-info">0.01</td>
+                        <td class="text-info">0.11</td>                     
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">Inversa</td> 
+                        <td>1.00</td>
+                        <td class="text-info">65.50</td>
+                        <td class="text-info">71.50</td>
+                        <td class="text-info">9.40</td>                    
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">1 USD</td>                        
+                        <td class="text-info">64.50</td>
+                        <td>1.00</td>
+                        <td class="text-info">0.92</td>
+                        <td class="text-info">7.09</td>           
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">Inversa</td> 
+                        <td class="text-info">0.01</td>
+                        <td>1.00</td>
+                        <td class="text-info">1.08</td>
+                        <td class="text-info">0.14</td>                   
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">1 EUR</td>                        
+                        <td class="text-info">70.00</td>
+                        <td class="text-info">1.08</td>
+                        <td>1.00</td>
+                        <td class="text-info">7.67</td>                     
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">Inversa</td> 
+                        <td class="text-info">0.01</td>
+                        <td class="text-info">0.92</td>
+                        <td>1.00</td>
+                        <td class="text-info">0.13</td>                   
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">1 CNY</td>                        
+                        <td class="text-info">9.40</td>
+                        <td class="text-info">0.14</td>
+                        <td class="text-info">0.13</td>
+                        <td>1.00</td>                   
+                    </tr>
+                    <tr class="bordes">
+                        <td scope="row">Inversa</td> 
+                        <td class="text-info">0.11</td>
+                        <td class="text-info">7.09</td>
+                        <td class="text-info">7.67</td>
+                        <td>1.00</td>                   
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </section>
+    <aside class="col-md-4 col-lg-4 col-xl-4 col-sm-12 my-3">
+        <div class="card conversor shadow rounded">
+            <div class="card-header text-center conversor">
+                <h2>Convertidor Divisas</h2>
+            </div>
+            <!-- CANTIDAD -->
+            <div class="card-body">
+                <form #divisasFrom="ngForm">
+                  <div class="form-group">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="text" class="form-control" placeholder="Ingrese cantidad" id="cantidad" [(ngModel)]="moneda.from_value" name="txtCantidad" #txtCantidad="ngModel" required pattern="(^[1-9][0-9]*.[0-9][0-9]|^[1-9][0-9]*$|^[1-9][0-9]*.[0-9])">
+                    <div *ngIf="txtCantidad.invalid && (txtCantidad.dirty || txtCantidad.touched)" class="alert alert-danger">
+                      <div *ngIf="txtCantidad.errors.required">
+                        El campo Cantidad es requerido
+                      </div>
+                      <div *ngIf="txtCantidad.errors.pattern">
+                        Solo se admiten una cantidad mayores a ceros y hasta dos decimales
+                      </div>
+                    </div>
+                  </div>
+                  <!-- DE -->
+                  <div class="form-group">
+                    <label for="de">De</label>
+                    <select class="form-control" [(ngModel)]="moneda.from_type" name="cmbDe" required #cmbDe="ngModel">
+                      <option value="ARS">ARS Pesos Argentinos</option>
+                      <option value="USD">USD Dolares EEUU</option>
+                      <option value="EUR">EUR Euro</option>
+                      <option value="CNY">CNY Yuan</option>
+                    </select>
+                    <div *ngIf="cmbDe.invalid && (cmbDe.dirty || cmbDe.touched)" class="alert alert-danger">
+                      <div *ngIf="cmbDe.errors.required">
+                        El campo De es requerido
+                      </div>
+                    </div>
+                  </div>
+                  <!-- A -->
+                  <div class="form-group">
+                    <label for="a">A</label>
+                    <select class="form-control" name="cmbA" [(ngModel)]="moneda.to_type" required #cmbA="ngModel">
+                      <option value="ARS">ARS Pesos Argentinos</option>
+                      <option value="USD">USD Dolares EEUU</option>
+                      <option value="EUR">EUR Euro</option>
+                      <option value="CNY">CNY Yuan</option>
+                    </select>
+                    <div *ngIf="cmbA.invalid && (cmbA.dirty || cmbA.touched)" class="alert alert-danger">
+                      <div *ngIf="cmbA.errors.required">
+                        El campo A es requerido
+                      </div>
+                    </div>
+                  </div>
+
+                  <label class="col-12 text-center text-white strong">
+                    Total: {{ total | number:'2.0-0' }} {{ tipo }}
+                  </label>
+                  <button type="submit" class="btn btn-warning text-center col-12" (click)="obtenerConversion()" [disabled]="!divisasFrom.form.valid">Convertir</button>
+                      
+                </form>
+            </div>
+        </div>  
+    </aside>
+</div>
